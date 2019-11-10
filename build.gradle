@@ -39,17 +39,14 @@ dependencies {
 
 repositories {
 	mavenCentral()
+	maven {
+		url 'https://projects.itemis.de/nexus/content/groups/OS/'
+	}
 }
 
 if (!hasProperty("jdk_home")) {
 	def java_home = System.properties['java.home']
 	def jdk_home = java_home
-	if (!file("$jdk_home/lib/tools.jar").isFile()) {
-		jdk_home = jdk_home + "/.."
-	}
-	if (!file("$jdk_home/lib/tools.jar").isFile()) {
-		throw new GradleException("Not finding the JDK...")
-	}
 	ext.jdk_home = jdk_home
 }
 
@@ -94,7 +91,7 @@ task setup(dependsOn: setuplocal)
 task generateBuildAntScripts(type: BuildLanguages, dependsOn: [resolveMps, resolveMpsArtifacts]) {
 	scriptArgs = antScriptArgs
 	scriptClasspath = buildScriptClasspath
-	script new File('build-meta.xml')
+	script new File('mpscode/build-meta.xml')
 }
 
 task buildLanguages(type: BuildLanguages, dependsOn: [generateBuildAntScripts]) {
