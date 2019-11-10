@@ -2,8 +2,10 @@
 <project version="4">
   <component name="MPSProject">
     <projectModules>
-      <modulePath path="$PROJECT_DIR$/languages/com.github.rulesmps.drools/com.github.rulesmps.drools.mpl" folder="" />
-      <modulePath path="$PROJECT_DIR$/languages/com.github.rulesmps.drools/sandbox/com.github.rulesmps.drools.sandbox.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/com.github.rulesmps.drools/com.github.rulesmps.drools.mpl" folder="languages" />
+      <modulePath path="$PROJECT_DIR$/languages/com.github.rulesmps.drools/sandbox/com.github.rulesmps.drools.sandbox.msd" folder="sandboxes" />
+      <modulePath path="$PROJECT_DIR$/solutions/com.github.rulesmps.build.meta/com.github.rulesmps.build.meta.msd" folder="_build" />
+      <modulePath path="$PROJECT_DIR$/solutions/com.github.rulesmps.build/com.github.rulesmps.build.msd" folder="_build" />
     </projectModules>
   </component>
 </project>
