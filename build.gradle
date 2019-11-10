@@ -5,6 +5,7 @@ import de.itemis.mps.gradle.RunAntScript
 
 buildscript {
     repositories {
+    	maven { url 'https://projects.itemis.de/nexus/content/repositories/mbeddr' }
         mavenCentral()
         jcenter()
     }
