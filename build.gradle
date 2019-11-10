@@ -97,6 +97,6 @@ task generateBuildAntScripts(type: BuildLanguages, dependsOn: [resolveMps, resol
 task buildLanguages(type: BuildLanguages, dependsOn: [generateBuildAntScripts]) {
 	scriptArgs = antScriptArgs
 	scriptClasspath = buildScriptClasspath
-	script new File('build-languages.xml')
+	script new File('mpscode/build-languages.xml')
 }
 
