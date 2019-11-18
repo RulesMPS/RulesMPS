@@ -105,6 +105,7 @@
       <concept id="4278635856200794926" name="jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyExtendLanguage" flags="ng" index="1Busua">
         <reference id="4278635856200794928" name="language" index="1Busuk" />
       </concept>
+      <concept id="3189788309731840247" name="jetbrains.mps.build.mps.structure.BuildMps_Solution" flags="ng" index="1E1JtA" />
       <concept id="3189788309731840248" name="jetbrains.mps.build.mps.structure.BuildMps_Language" flags="ng" index="1E1JtD">
         <child id="9200313594498201639" name="generator" index="1TViLv" />
       </concept>
@@ -167,8 +168,23 @@
     </node>
     <node concept="2G$12M" id="6qtblcOD6Uq" role="3989C9">
       <property role="TrG5h" value="RulesMPS" />
-      <node concept="1E1JtD" id="6qtblcOD6Vj" role="2G$12L">
+      <node concept="1E1JtA" id="3zMoMOAWWE0" role="2G$12L">
         <property role="BnDLt" value="true" />
+        <property role="TrG5h" value="com.github.rulesmps.utils" />
+        <property role="3LESm3" value="292a37c4-e710-46e9-a974-9599ca363ff1" />
+        <node concept="55IIr" id="3zMoMOAWWE3" role="3LF7KH">
+          <node concept="2Ry0Ak" id="3zMoMOAWWEn" role="iGT6I">
+            <property role="2Ry0Am" value="solutions" />
+            <node concept="2Ry0Ak" id="3zMoMOAWWEs" role="2Ry0An">
+              <property role="2Ry0Am" value="com.github.rulesmps.utils" />
+              <node concept="2Ry0Ak" id="3zMoMOAWWEx" role="2Ry0An">
+                <property role="2Ry0Am" value="com.github.rulesmps.utils.msd" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="1E1JtD" id="6qtblcOD6Vj" role="2G$12L">
         <property role="TrG5h" value="com.github.rulesmps.drools" />
         <property role="3LESm3" value="4978d48e-dd3e-4462-8118-5b2bf9c3e13b" />
         <node concept="55IIr" id="6qtblcOD6Vk" role="3LF7KH">
@@ -205,6 +221,11 @@
         <node concept="1yeLz9" id="6qtblcOD6VL" role="1TViLv">
           <property role="TrG5h" value="com.github.rulesmps.drools#01" />
           <property role="3LESm3" value="f4e50576-fb75-4bc7-b39d-2a0d025bd7b8" />
+        </node>
+        <node concept="1SiIV0" id="3zMoMOAWWEz" role="3bR37C">
+          <node concept="3bR9La" id="3zMoMOAWWE$" role="1SiIV1">
+            <ref role="3bR37D" node="3zMoMOAWWE0" resolve="com.github.rulesmps.utils" />
+          </node>
         </node>
       </node>
     </node>
