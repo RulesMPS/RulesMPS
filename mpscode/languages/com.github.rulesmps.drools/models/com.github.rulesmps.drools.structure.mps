@@ -6,14 +6,15 @@
     <devkit ref="78434eb8-b0e5-444b-850d-e7c4ad2da9ab(jetbrains.mps.devkit.aspect.structure)" />
   </languages>
   <imports>
+    <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
-    <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="6714410169261853888" name="conceptId" index="EcuMT" />
         <property id="4628067390765956802" name="abstract" index="R5$K7" />
+        <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
       </concept>
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
@@ -43,6 +44,13 @@
     <property role="TrG5h" value="DroolsFile" />
     <property role="19KtqR" value="true" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="3zMoMOAS4iD" role="1TKVEi">
+      <property role="IQ2ns" value="4103451256064853161" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="globalVars" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" node="3zMoMOARU$_" resolve="DroolsGlobalVarDeclaration" />
+    </node>
     <node concept="1TJgyj" id="6qtblcOAu7X" role="1TKVEi">
       <property role="IQ2ns" value="7394115998600258045" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
@@ -89,7 +97,8 @@
     <node concept="1TJgyj" id="6qtblcOAucj" role="1TKVEi">
       <property role="IQ2ns" value="7394115998600258323" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="condition" />
+      <property role="20kJfa" value="conditions" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
     <node concept="PrWs8" id="6qtblcOAu7S" role="PzmwI">
@@ -114,6 +123,115 @@
       <property role="20kJfa" value="input" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="6qtblcOAu7R" resolve="DroolsRuleInput" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="3zMoMOAQtlR">
+    <property role="EcuMT" value="4103451256064431479" />
+    <property role="TrG5h" value="DroolsLocalVarDeclaration" />
+    <ref role="1TJDcQ" node="6qtblcOAu7U" resolve="DroolsStatement" />
+    <node concept="1TJgyj" id="UesZ_nZ2I9" role="1TKVEi">
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="type" />
+      <property role="IQ2ns" value="1048903277984099209" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" to="tpee:fz3vP1H" resolve="Type" />
+    </node>
+    <node concept="1TJgyj" id="fz3vP1I" role="1TKVEi">
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="initializer" />
+      <property role="IQ2ns" value="1068431790190" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+    <node concept="PrWs8" id="3zMoMOAQJo7" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="3zMoMOAR$_C">
+    <property role="EcuMT" value="4103451256064723304" />
+    <property role="TrG5h" value="DroolsLocalVarDeclarationRef" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
+    <node concept="1TJgyj" id="3zMoMOAR$_D" role="1TKVEi">
+      <property role="IQ2ns" value="4103451256064723305" />
+      <property role="20kJfa" value="varDecl" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="3zMoMOAQtlR" resolve="DroolsLocalVarDeclaration" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="3zMoMOARGkf">
+    <property role="EcuMT" value="4103451256064754959" />
+    <property role="TrG5h" value="DroolsInsertStatement" />
+    <property role="34LRSv" value="insert" />
+    <ref role="1TJDcQ" node="6qtblcOAu7U" resolve="DroolsStatement" />
+    <node concept="1TJgyj" id="3zMoMOARGkg" role="1TKVEi">
+      <property role="IQ2ns" value="4103451256064754960" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="value" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="3zMoMOARU$_">
+    <property role="EcuMT" value="4103451256064813349" />
+    <property role="TrG5h" value="DroolsGlobalVarDeclaration" />
+    <ref role="1TJDcQ" node="6qtblcOAu7U" resolve="DroolsStatement" />
+    <node concept="1TJgyj" id="3zMoMOARU$A" role="1TKVEi">
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="type" />
+      <property role="IQ2ns" value="4103451256064813350" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" to="tpee:fz3vP1H" resolve="Type" />
+    </node>
+    <node concept="PrWs8" id="3zMoMOARU$C" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="3zMoMOARU_k">
+    <property role="EcuMT" value="4103451256064813396" />
+    <property role="TrG5h" value="DroolsGlobalVarDeclarationRef" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
+    <node concept="1TJgyj" id="3zMoMOARU_l" role="1TKVEi">
+      <property role="IQ2ns" value="4103451256064813397" />
+      <property role="20kJfa" value="varDecl" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="3zMoMOARU$_" resolve="DroolsGlobalVarDeclaration" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="3zMoMOASR8K">
+    <property role="EcuMT" value="4103451256065061424" />
+    <property role="TrG5h" value="DroolsRuleInputFieldRef" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
+    <node concept="1TJgyj" id="3zMoMOASSqa" role="1TKVEi">
+      <property role="IQ2ns" value="4103451256065066634" />
+      <property role="20kJfa" value="getter" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" to="tpee:fzclF8t" resolve="InstanceMethodDeclaration" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="3zMoMOAU9WC">
+    <property role="EcuMT" value="4103451256065400616" />
+    <property role="TrG5h" value="DroolsExpressionStatement" />
+    <ref role="1TJDcQ" node="6qtblcOAu7U" resolve="DroolsStatement" />
+    <node concept="1TJgyj" id="3zMoMOAU9WD" role="1TKVEi">
+      <property role="IQ2ns" value="4103451256065400617" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="expression" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="3zMoMOAWxFk">
+    <property role="EcuMT" value="4103451256066022100" />
+    <property role="TrG5h" value="InstanceAccessor" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="hwllgre" role="1TKVEi">
+      <property role="20kJfa" value="getter" />
+      <property role="20lbJX" value="fLJekj4/1" />
+      <property role="IQ2ns" value="1202948736718" />
+      <ref role="20lvS9" to="tpee:fzclF8t" resolve="InstanceMethodDeclaration" />
+    </node>
+    <node concept="PrWs8" id="3zMoMOAWxFl" role="PzmwI">
+      <ref role="PrY4T" to="tpee:hqOqG0K" resolve="IOperation" />
     </node>
   </node>
 </model>
