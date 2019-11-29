@@ -39,6 +39,7 @@
         <module reference="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" version="0" />
         <module reference="4978d48e-dd3e-4462-8118-5b2bf9c3e13b(com.github.rulesmps.drools)" version="0" />
         <module reference="f4e50576-fb75-4bc7-b39d-2a0d025bd7b8(com.github.rulesmps.drools#01)" version="0" />
+        <module reference="292a37c4-e710-46e9-a974-9599ca363ff1(com.github.rulesmps.utils)" version="0" />
         <module reference="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" version="0" />
         <module reference="e39e4a59-8cb6-498e-860e-8fa8361c0d90(jetbrains.mps.baseLanguage.scopes)" version="0" />
         <module reference="2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)" version="0" />
@@ -106,6 +107,9 @@
     <module reference="9e98f4e2-decf-4e97-bf80-9109e8b759aa(jetbrains.mps.lang.feedback.context)" version="0" />
     <module reference="9ded098b-ad6a-4657-bfd9-48636cfe8bc3(jetbrains.mps.lang.traceable)" version="0" />
   </dependencyVersions>
+  <runtime>
+    <dependency reexport="false">292a37c4-e710-46e9-a974-9599ca363ff1(com.github.rulesmps.utils)</dependency>
+  </runtime>
   <extendedLanguages>
     <extendedLanguage>f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</extendedLanguage>
   </extendedLanguages>
