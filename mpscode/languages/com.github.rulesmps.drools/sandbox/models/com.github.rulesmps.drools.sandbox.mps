@@ -19,6 +19,9 @@
       </concept>
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
       <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="ng" index="2tJIrI" />
+      <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
+        <child id="1154032183016" name="body" index="2LFqv$" />
+      </concept>
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
@@ -38,6 +41,7 @@
         <child id="1145553007750" name="creator" index="2ShVmc" />
       </concept>
       <concept id="1070475354124" name="jetbrains.mps.baseLanguage.structure.ThisExpression" flags="nn" index="Xjq3P" />
+      <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
       <concept id="1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" flags="ig" index="312cEg" />
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu" />
@@ -58,6 +62,10 @@
       <concept id="1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" flags="nn" index="3clFbF">
         <child id="1068580123156" name="expression" index="3clFbG" />
       </concept>
+      <concept id="1068580123159" name="jetbrains.mps.baseLanguage.structure.IfStatement" flags="nn" index="3clFbJ">
+        <child id="1068580123160" name="condition" index="3clFbw" />
+        <child id="1068580123161" name="ifTrue" index="3clFbx" />
+      </concept>
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
@@ -72,6 +80,7 @@
         <child id="1068581517676" name="expression" index="3cqZAk" />
       </concept>
       <concept id="1068581242867" name="jetbrains.mps.baseLanguage.structure.LongType" flags="in" index="3cpWsb" />
+      <concept id="1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" flags="nr" index="3cpWsn" />
       <concept id="1068581517677" name="jetbrains.mps.baseLanguage.structure.VoidType" flags="in" index="3cqZAl" />
       <concept id="1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" flags="nn" index="3fqX7Q">
         <child id="1081516765348" name="expression" index="3fr31v" />
@@ -92,7 +101,12 @@
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
         <child id="1178549979242" name="visibility" index="1B3o_S" />
       </concept>
-      <concept id="1208623485264" name="jetbrains.mps.baseLanguage.structure.AbstractOperation" flags="nn" index="1B$H19" />
+      <concept id="1144226303539" name="jetbrains.mps.baseLanguage.structure.ForeachStatement" flags="nn" index="1DcWWT">
+        <child id="1144226360166" name="iterable" index="1DdaDG" />
+      </concept>
+      <concept id="1144230876926" name="jetbrains.mps.baseLanguage.structure.AbstractForStatement" flags="nn" index="1DupvO">
+        <child id="1144230900587" name="variable" index="1Duv9x" />
+      </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1178893518978" name="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" flags="nn" index="1VxSAg" />
@@ -248,7 +262,17 @@
               <node concept="1ifdwr" id="1waIs71_RbM" role="2Oq$k0">
                 <ref role="1ifdwq" node="1waIs71_KWD" resolve="sequence" />
               </node>
-              <node concept="1B$H19" id="1waIs71_RdE" role="2OqNvi" />
+              <node concept="liA8E" id="1waIs71A_es" role="2OqNvi">
+                <ref role="37wK5l" node="1waIs71AsoT" resolve="next" />
+                <node concept="2OqwBi" id="1waIs71ABr4" role="37wK5m">
+                  <node concept="1ifdwr" id="1waIs71A_hB" role="2Oq$k0">
+                    <ref role="1ifdwq" node="1waIs71_KWR" resolve="subscriber" />
+                  </node>
+                  <node concept="liA8E" id="1waIs71AD$r" role="2OqNvi">
+                    <ref role="37wK5l" node="1waIs71ABED" resolve="getActualEmailsReceived" />
+                  </node>
+                </node>
+              </node>
             </node>
             <node concept="1ifdwr" id="1waIs71_RoC" role="37wK5m">
               <ref role="1ifdwq" node="1waIs71_KWR" resolve="subscriber" />
@@ -266,11 +290,23 @@
         </node>
         <node concept="2ShNRf" id="1waIs71_R_Q" role="33vP2m">
           <node concept="1pGfFk" id="1waIs71_RK_" role="2ShVmc">
-            <ref role="37wK5l" node="3zMoMOARfx6" resolve="EmailScheduling" />
+            <ref role="37wK5l" node="1waIs71ApoT" resolve="EmailScheduling" />
             <node concept="ub2D5" id="1waIs71AoFO" role="37wK5m">
               <ref role="ub2D4" node="1waIs71_PWO" resolve="$sending" />
             </node>
+            <node concept="Rm8GO" id="1waIs71Apd4" role="37wK5m">
+              <ref role="Rm8GQ" node="3zMoMOARf3d" resolve="IMPORTANT" />
+              <ref role="1Px2BO" node="3zMoMOAReWW" resolve="Priority" />
+            </node>
+            <node concept="3clFbT" id="1waIs71ApeR" role="37wK5m">
+              <property role="3clFbU" value="true" />
+            </node>
           </node>
+        </node>
+      </node>
+      <node concept="ubaoy" id="1waIs71Apgz" role="1i1cXi">
+        <node concept="ub2D5" id="1waIs71Aphs" role="ubaoX">
+          <ref role="ub2D4" node="1waIs71_Rzf" resolve="$scheduling" />
         </node>
       </node>
     </node>
@@ -439,6 +475,63 @@
       <node concept="3Tm1VV" id="3zMoMOARkZS" role="1B3o_S" />
       <node concept="3uibUv" id="3zMoMOARl5A" role="3clF45">
         <ref role="3uigEE" node="3zMoMOARbiB" resolve="Email" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="1waIs71As7J" role="jymVt" />
+    <node concept="3clFb_" id="1waIs71AsoT" role="jymVt">
+      <property role="TrG5h" value="next" />
+      <node concept="3clFbS" id="1waIs71AsoW" role="3clF47">
+        <node concept="1DcWWT" id="1waIs71AycX" role="3cqZAp">
+          <node concept="3cpWsn" id="1waIs71AycY" role="1Duv9x">
+            <property role="TrG5h" value="email" />
+            <node concept="3uibUv" id="1waIs71Ayxv" role="1tU5fm">
+              <ref role="3uigEE" node="3zMoMOARbiB" resolve="Email" />
+            </node>
+          </node>
+          <node concept="37vLTw" id="1waIs71Ay$h" role="1DdaDG">
+            <ref role="3cqZAo" node="3zMoMOARgj2" resolve="emails" />
+          </node>
+          <node concept="3clFbS" id="1waIs71Ayd0" role="2LFqv$">
+            <node concept="3clFbJ" id="1waIs71AyZ8" role="3cqZAp">
+              <node concept="3fqX7Q" id="1waIs71AyZG" role="3clFbw">
+                <node concept="2OqwBi" id="1waIs71AzYP" role="3fr31v">
+                  <node concept="37vLTw" id="1waIs71Az0y" role="2Oq$k0">
+                    <ref role="3cqZAo" node="1waIs71AsuP" resolve="emailsReceived" />
+                  </node>
+                  <node concept="liA8E" id="1waIs71A$68" role="2OqNvi">
+                    <ref role="37wK5l" to="33ny:~List.contains(java.lang.Object)" resolve="contains" />
+                    <node concept="37vLTw" id="1waIs71A$dx" role="37wK5m">
+                      <ref role="3cqZAo" node="1waIs71AycY" resolve="email" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbS" id="1waIs71AyZa" role="3clFbx">
+                <node concept="3cpWs6" id="1waIs71A$oM" role="3cqZAp">
+                  <node concept="37vLTw" id="1waIs71A$pA" role="3cqZAk">
+                    <ref role="3cqZAo" node="1waIs71AycY" resolve="email" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="1waIs71AymW" role="3cqZAp">
+          <node concept="10Nm6u" id="1waIs71Aysn" role="3cqZAk" />
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="1waIs71Asj0" role="1B3o_S" />
+      <node concept="3uibUv" id="1waIs71AsoG" role="3clF45">
+        <ref role="3uigEE" node="3zMoMOARbiB" resolve="Email" />
+      </node>
+      <node concept="37vLTG" id="1waIs71AsuP" role="3clF46">
+        <property role="TrG5h" value="emailsReceived" />
+        <node concept="3uibUv" id="1waIs71AsuO" role="1tU5fm">
+          <ref role="3uigEE" to="33ny:~List" resolve="List" />
+          <node concept="3uibUv" id="1waIs71As$1" role="11_B2D">
+            <ref role="3uigEE" node="3zMoMOARbiB" resolve="Email" />
+          </node>
+        </node>
       </node>
     </node>
     <node concept="3Tm1VV" id="6qtblcOATHh" role="1B3o_S" />
@@ -690,6 +783,46 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="1waIs71A_u8" role="jymVt" />
+    <node concept="3clFb_" id="1waIs71A_Zg" role="jymVt">
+      <property role="TrG5h" value="getEmailsReceived" />
+      <node concept="3clFbS" id="1waIs71A_Zj" role="3clF47">
+        <node concept="3cpWs6" id="1waIs71AA5n" role="3cqZAp">
+          <node concept="37vLTw" id="1waIs71AA69" role="3cqZAk">
+            <ref role="3cqZAo" node="3zMoMOARhMV" resolve="emailsReceived" />
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="1waIs71A_Ti" role="1B3o_S" />
+      <node concept="3uibUv" id="1waIs71A_YP" role="3clF45">
+        <ref role="3uigEE" to="33ny:~List" resolve="List" />
+        <node concept="3uibUv" id="1waIs71A_Z9" role="11_B2D">
+          <ref role="3uigEE" node="3zMoMOARa6n" resolve="EmailSending" />
+        </node>
+      </node>
+    </node>
+    <node concept="3clFb_" id="1waIs71ABED" role="jymVt">
+      <property role="TrG5h" value="getActualEmailsReceived" />
+      <node concept="3clFbS" id="1waIs71ABEE" role="3clF47">
+        <node concept="3cpWs6" id="1waIs71ABEF" role="3cqZAp">
+          <node concept="2OqwBi" id="1waIs71ACuv" role="3cqZAk">
+            <node concept="37vLTw" id="1waIs71ABEG" role="2Oq$k0">
+              <ref role="3cqZAo" node="3zMoMOARhMV" resolve="emailsReceived" />
+            </node>
+            <node concept="u07BT" id="1waIs71ADjq" role="2OqNvi">
+              <ref role="llgvm" to="33ny:~Optional.flatMap(java.util.function.Function)" resolve="flatMap" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="1waIs71ABEH" role="1B3o_S" />
+      <node concept="3uibUv" id="1waIs71ABEI" role="3clF45">
+        <ref role="3uigEE" to="33ny:~List" resolve="List" />
+        <node concept="3uibUv" id="1waIs71ACgU" role="11_B2D">
+          <ref role="3uigEE" node="3zMoMOARbiB" resolve="Email" />
+        </node>
+      </node>
+    </node>
     <node concept="3Tm1VV" id="6qtblcOB6Ws" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="3zMoMOARa6n">
@@ -901,6 +1034,42 @@
               </node>
             </node>
           </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="1waIs71ApBY" role="jymVt" />
+    <node concept="3clFbW" id="1waIs71ApoT" role="jymVt">
+      <node concept="37vLTG" id="1waIs71ApoU" role="3clF46">
+        <property role="TrG5h" value="sending" />
+        <node concept="3uibUv" id="1waIs71ApoV" role="1tU5fm">
+          <ref role="3uigEE" node="3zMoMOARa6n" resolve="EmailSending" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="1waIs71ApoW" role="3clF46">
+        <property role="TrG5h" value="priority" />
+        <node concept="3uibUv" id="1waIs71ApoX" role="1tU5fm">
+          <ref role="3uigEE" node="3zMoMOAReWW" resolve="Priority" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="1waIs71ApoY" role="3clF46">
+        <property role="TrG5h" value="timeSensitive" />
+        <node concept="10P_77" id="1waIs71ApoZ" role="1tU5fm" />
+      </node>
+      <node concept="3cqZAl" id="1waIs71App2" role="3clF45" />
+      <node concept="3Tm1VV" id="1waIs71App3" role="1B3o_S" />
+      <node concept="3clFbS" id="1waIs71App4" role="3clF47">
+        <node concept="1VxSAg" id="1waIs71ApAz" role="3cqZAp">
+          <ref role="37wK5l" node="3zMoMOARfx6" resolve="EmailScheduling" />
+          <node concept="37vLTw" id="1waIs71ApA$" role="37wK5m">
+            <ref role="3cqZAo" node="1waIs71ApoU" resolve="sending" />
+          </node>
+          <node concept="37vLTw" id="1waIs71ApA_" role="37wK5m">
+            <ref role="3cqZAo" node="1waIs71ApoW" resolve="priority" />
+          </node>
+          <node concept="37vLTw" id="1waIs71ApGV" role="37wK5m">
+            <ref role="3cqZAo" node="1waIs71ApoY" resolve="timeSensitive" />
+          </node>
+          <node concept="3clFbT" id="1waIs71ApAB" role="37wK5m" />
         </node>
       </node>
     </node>
