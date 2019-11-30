@@ -234,6 +234,11 @@
         <node concept="1E0d5M" id="7swVxLwrmC1" role="1E1XAP">
           <ref role="1E0d5P" node="3zMoMOAWWE0" resolve="com.github.rulesmps.utils" />
         </node>
+        <node concept="1SiIV0" id="1waIs71ADD3" role="3bR37C">
+          <node concept="3bR9La" id="1waIs71ADD4" role="1SiIV1">
+            <ref role="3bR37D" to="ffeo:1H905DlDUSw" resolve="MPS.OpenAPI" />
+          </node>
+        </node>
       </node>
     </node>
     <node concept="2sgV4H" id="1Y19Fp43fwF" role="1l3spa">
