@@ -14,6 +14,7 @@
     <devkit ref="00000000-0000-4000-0000-5604ebd4f22c(jetbrains.mps.devkit.aspect.constraints)" />
   </languages>
   <imports>
+    <import index="o8zo" ref="r:314576fc-3aee-4386-a0a5-a38348ac317d(jetbrains.mps.scope)" />
     <import index="4d0e" ref="r:37f4b066-8991-46e4-89f7-3acbbb69b197(com.github.rulesmps.drools.structure)" implicit="true" />
   </imports>
   <registry>
@@ -25,19 +26,39 @@
       <concept id="1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" flags="in" index="2VMwT0">
         <child id="1137022507850" name="body" index="2VODD2" />
       </concept>
+      <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
+        <reference id="1144433194310" name="classConcept" index="1Pybhc" />
+      </concept>
       <concept id="1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" flags="nn" index="3clFbF">
         <child id="1068580123156" name="expression" index="3clFbG" />
       </concept>
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
+      <concept id="1068581242878" name="jetbrains.mps.baseLanguage.structure.ReturnStatement" flags="nn" index="3cpWs6">
+        <child id="1068581517676" name="expression" index="3cqZAk" />
+      </concept>
+      <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
+        <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
+        <child id="1068499141038" name="actualArgument" index="37wK5m" />
+      </concept>
     </language>
     <language id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints">
       <concept id="6702802731807351367" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" flags="in" index="9S07l" />
       <concept id="1202989658459" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" flags="nn" index="nLn13" />
+      <concept id="8966504967485224688" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_contextNode" flags="nn" index="2rP1CM" />
+      <concept id="5564765827938091039" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Scope" flags="ig" index="3dgokm" />
+      <concept id="8401916545537438642" name="jetbrains.mps.lang.constraints.structure.InheritedNodeScopeFactory" flags="ng" index="1dDu$B">
+        <reference id="8401916545537438643" name="kind" index="1dDu$A" />
+      </concept>
       <concept id="1213093968558" name="jetbrains.mps.lang.constraints.structure.ConceptConstraints" flags="ng" index="1M2fIO">
         <reference id="1213093996982" name="concept" index="1M2myG" />
         <child id="6702802731807737306" name="canBeChild" index="9Vyp8" />
+        <child id="1213100494875" name="referent" index="1Mr941" />
+      </concept>
+      <concept id="1148687176410" name="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint" flags="ng" index="1N5Pfh">
+        <reference id="1148687202698" name="applicableLink" index="1N5Vy1" />
+        <child id="1148687345559" name="searchScopeFactory" index="1N6uqs" />
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
@@ -52,6 +73,9 @@
       <concept id="1144100932627" name="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion" flags="ng" index="1xIGOp" />
       <concept id="1144101972840" name="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" flags="ng" index="1xMEDy">
         <child id="1207343664468" name="conceptArgument" index="ri$Ld" />
+      </concept>
+      <concept id="1138056282393" name="jetbrains.mps.lang.smodel.structure.SLinkListAccess" flags="nn" index="3Tsc0h">
+        <reference id="1138056546658" name="link" index="3TtcxE" />
       </concept>
     </language>
   </registry>
@@ -75,6 +99,46 @@
             <node concept="3x8VRR" id="3zMoMOASS7V" role="2OqNvi" />
           </node>
         </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1M2fIO" id="1waIs71_KZ$">
+    <ref role="1M2myG" to="4d0e:6qtblcOCvl8" resolve="DroolsRuleInputRef" />
+    <node concept="1N5Pfh" id="1waIs71_KZ_" role="1Mr941">
+      <ref role="1N5Vy1" to="4d0e:6qtblcOCvl9" resolve="input" />
+      <node concept="3dgokm" id="1waIs71_L1h" role="1N6uqs">
+        <node concept="3clFbS" id="1waIs71_L1i" role="2VODD2">
+          <node concept="3cpWs6" id="1waIs71_L3N" role="3cqZAp">
+            <node concept="2YIFZM" id="1waIs71_OEK" role="3cqZAk">
+              <ref role="37wK5l" to="o8zo:4IP40Bi3eAf" resolve="forNamedElements" />
+              <ref role="1Pybhc" to="o8zo:4IP40Bi3e_R" resolve="ListScope" />
+              <node concept="2OqwBi" id="1waIs71_PeA" role="37wK5m">
+                <node concept="2OqwBi" id="1waIs71_ORg" role="2Oq$k0">
+                  <node concept="2rP1CM" id="1waIs71_OGY" role="2Oq$k0" />
+                  <node concept="2Xjw5R" id="1waIs71_P03" role="2OqNvi">
+                    <node concept="1xMEDy" id="1waIs71_P05" role="1xVPHs">
+                      <node concept="chp4Y" id="1waIs71_P3t" role="ri$Ld">
+                        <ref role="cht4Q" to="4d0e:6qtblcOAu7O" resolve="DroolsRule" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="3Tsc0h" id="1waIs71_PnQ" role="2OqNvi">
+                  <ref role="3TtcxE" to="4d0e:6qtblcOAu7Z" resolve="inputs" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1M2fIO" id="1waIs71_RNX">
+    <ref role="1M2myG" to="4d0e:3zMoMOAR$_C" resolve="DroolsLocalVarDeclarationRef" />
+    <node concept="1N5Pfh" id="1waIs71_RNY" role="1Mr941">
+      <ref role="1N5Vy1" to="4d0e:3zMoMOAR$_D" resolve="varDecl" />
+      <node concept="1dDu$B" id="1waIs71_VCz" role="1N6uqs">
+        <ref role="1dDu$A" to="4d0e:3zMoMOAQtlR" resolve="DroolsLocalVarDeclaration" />
       </node>
     </node>
   </node>

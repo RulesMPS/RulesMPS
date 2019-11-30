@@ -83,6 +83,9 @@
     <node concept="PrWs8" id="6qtblcOAu7P" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
+    <node concept="PrWs8" id="1waIs71_VGb" role="PzmwI">
+      <ref role="PrY4T" to="tpck:3fifI_xCcJN" resolve="ScopeProvider" />
+    </node>
   </node>
   <node concept="1TIwiD" id="6qtblcOAu7R">
     <property role="EcuMT" value="7394115998600258039" />

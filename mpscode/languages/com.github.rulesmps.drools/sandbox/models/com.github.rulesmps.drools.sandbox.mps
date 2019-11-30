@@ -92,6 +92,7 @@
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
         <child id="1178549979242" name="visibility" index="1B3o_S" />
       </concept>
+      <concept id="1208623485264" name="jetbrains.mps.baseLanguage.structure.AbstractOperation" flags="nn" index="1B$H19" />
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1178893518978" name="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" flags="nn" index="1VxSAg" />
@@ -214,6 +215,60 @@
             <ref role="37wK5l" node="6qtblcOBf9D" resolve="isInSequence" />
             <node concept="1ifdwr" id="6qtblcOCzYL" role="37wK5m">
               <ref role="1ifdwq" node="6qtblcOATHK" resolve="sequence" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1i1cMB" id="1waIs71_KTN" role="1i1cMI">
+      <property role="TrG5h" value="Continue sequence" />
+      <node concept="1i1cM$" id="1waIs71_KWD" role="1i1cMG">
+        <property role="TrG5h" value="sequence" />
+        <ref role="1i1Fr9" node="6qtblcOATHg" resolve="EmailSequence" />
+      </node>
+      <node concept="1i1cM$" id="1waIs71_KWR" role="1i1cMG">
+        <property role="TrG5h" value="subscriber" />
+        <ref role="1i1Fr9" node="6qtblcOB6Wr" resolve="Subscriber" />
+        <node concept="1rXfSq" id="1waIs71_KYo" role="1i1cT0">
+          <ref role="37wK5l" node="6qtblcOBf9D" resolve="isInSequence" />
+          <node concept="1ifdwr" id="1waIs71_PU9" role="37wK5m">
+            <ref role="1ifdwq" node="1waIs71_KWD" resolve="sequence" />
+          </node>
+        </node>
+      </node>
+      <node concept="uaVpq" id="1waIs71_PWO" role="1i1cXi">
+        <property role="TrG5h" value="$sending" />
+        <node concept="3uibUv" id="1waIs71_PWU" role="1ps_xK">
+          <ref role="3uigEE" node="3zMoMOARa6n" resolve="EmailSending" />
+        </node>
+        <node concept="2ShNRf" id="1waIs71_PX6" role="33vP2m">
+          <node concept="1pGfFk" id="1waIs71_Rbr" role="2ShVmc">
+            <ref role="37wK5l" node="3zMoMOARcwr" resolve="EmailSending" />
+            <node concept="2OqwBi" id="1waIs71_Rd_" role="37wK5m">
+              <node concept="1ifdwr" id="1waIs71_RbM" role="2Oq$k0">
+                <ref role="1ifdwq" node="1waIs71_KWD" resolve="sequence" />
+              </node>
+              <node concept="1B$H19" id="1waIs71_RdE" role="2OqNvi" />
+            </node>
+            <node concept="1ifdwr" id="1waIs71_RoC" role="37wK5m">
+              <ref role="1ifdwq" node="1waIs71_KWR" resolve="subscriber" />
+            </node>
+            <node concept="ubsDT" id="1waIs71_Rvg" role="37wK5m">
+              <ref role="ubsDS" node="3zMoMOAScEY" resolve="day" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="uaVpq" id="1waIs71_Rzf" role="1i1cXi">
+        <property role="TrG5h" value="$scheduling" />
+        <node concept="3uibUv" id="1waIs71_RzX" role="1ps_xK">
+          <ref role="3uigEE" node="3zMoMOARa7h" resolve="EmailScheduling" />
+        </node>
+        <node concept="2ShNRf" id="1waIs71_R_Q" role="33vP2m">
+          <node concept="1pGfFk" id="1waIs71_RK_" role="2ShVmc">
+            <ref role="37wK5l" node="3zMoMOARfx6" resolve="EmailScheduling" />
+            <node concept="ub2D5" id="1waIs71AoFO" role="37wK5m">
+              <ref role="ub2D4" node="1waIs71_PWO" resolve="$sending" />
             </node>
           </node>
         </node>
