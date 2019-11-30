@@ -9,6 +9,7 @@
   <imports>
     <import index="4d0e" ref="r:37f4b066-8991-46e4-89f7-3acbbb69b197(com.github.rulesmps.drools.structure)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
+    <import index="tpco" ref="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)" implicit="true" />
     <import index="p0q1" ref="r:c39a6933-af22-4855-837a-5688bf1e2107(com.github.rulesmps.drools.behavior)" implicit="true" />
   </imports>
   <registry>
@@ -27,6 +28,9 @@
         <child id="1080736633877" name="cellModel" index="2wV5jI" />
       </concept>
       <concept id="1239814640496" name="jetbrains.mps.lang.editor.structure.CellLayout_VerticalGrid" flags="nn" index="2EHx9g" />
+      <concept id="1078939183254" name="jetbrains.mps.lang.editor.structure.CellModel_Component" flags="sg" stub="3162947552742194261" index="PMmxH">
+        <reference id="1078939183255" name="editorComponent" index="PMmxG" />
+      </concept>
       <concept id="1186402211651" name="jetbrains.mps.lang.editor.structure.StyleSheet" flags="ng" index="V5hpn">
         <child id="1186402402630" name="styleClass" index="V601i" />
       </concept>
@@ -203,6 +207,10 @@
         <node concept="2iRkQZ" id="3zMoMOAS4j5" role="2czzBx" />
       </node>
       <node concept="3F0ifn" id="3zMoMOAS4iR" role="3EZMnx" />
+      <node concept="3F0ifn" id="1waIs71_ChV" role="3EZMnx">
+        <property role="3F0ifm" value="/* Rules */" />
+        <ref role="1k5W1q" node="3zMoMOAScGM" resolve="Comment" />
+      </node>
       <node concept="3F2HdR" id="6qtblcOACg0" role="3EZMnx">
         <ref role="1NtTu8" to="4d0e:6qtblcOAu7X" resolve="rules" />
         <node concept="2iRkQZ" id="6qtblcOACg1" role="2czzBx" />
@@ -323,8 +331,10 @@
   <node concept="24kQdi" id="3zMoMOARU$M">
     <ref role="1XX52x" to="4d0e:3zMoMOARU$_" resolve="DroolsGlobalVarDeclaration" />
     <node concept="3EZMnI" id="3zMoMOARU$O" role="2wV5jI">
-      <ref role="1k5W1q" node="3zMoMOAScGM" resolve="Comment" />
       <node concept="l2Vlx" id="3zMoMOARU$R" role="2iSdaV" />
+      <node concept="PMmxH" id="1waIs71_mAx" role="3EZMnx">
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+      </node>
       <node concept="3F1sOY" id="3zMoMOARU_7" role="3EZMnx">
         <ref role="1NtTu8" to="4d0e:3zMoMOARU$A" resolve="type" />
         <ref role="1k5W1q" node="3zMoMOAScGM" resolve="Comment" />
@@ -332,6 +342,12 @@
       <node concept="3F0A7n" id="3zMoMOARU_f" role="3EZMnx">
         <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
         <ref role="1k5W1q" node="3zMoMOAScGM" resolve="Comment" />
+      </node>
+      <node concept="3F0ifn" id="1waIs71_mAE" role="3EZMnx">
+        <property role="3F0ifm" value=";" />
+        <node concept="11L4FC" id="1waIs71_mAK" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
       </node>
     </node>
   </node>

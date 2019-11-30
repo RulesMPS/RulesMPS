@@ -174,6 +174,7 @@
   <node concept="1TIwiD" id="3zMoMOARU$_">
     <property role="EcuMT" value="4103451256064813349" />
     <property role="TrG5h" value="DroolsGlobalVarDeclaration" />
+    <property role="34LRSv" value="global" />
     <ref role="1TJDcQ" node="6qtblcOAu7U" resolve="DroolsStatement" />
     <node concept="1TJgyj" id="3zMoMOARU$A" role="1TKVEi">
       <property role="20lmBu" value="fLJjDmT/aggregation" />
